@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Medidor_de_IMC.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+            <Label
+                x:Name="AvisoLabel"
+                Text="Preencha os dados abaixo para o cálculo do IMC"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <Label
+                Text="Nome:"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <Entry
+                x:Name="NomeEntry"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <Label
+                Text="Idade:"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <Entry
+                x:Name="IdadeEntry"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <Label
+                Text="Gênero:"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <Picker 
+                x:Name="GeneroPicker"
+                Title="Selecione seu Gênero">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Masculino</x:String>
+                        <x:String>Feminino</x:String>
+                        <x:String>Outro</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Label
+                x:Name="AlturaLabel"
+                Text="Altura:"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <Slider
+                x:Name="AlturaSlider"
+                Minimum="0.5"
+                Maximum="2.7"
+                Value="0.5"
+                ValueChanged="AlturaSlider_ValueChanged"
+                />
+
+            <Label
+                x:Name="PesoLabel"
+                Text="Peso:"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <Slider
+                x:Name="PesoSlider"
+                Minimum="2"
+                Maximum="635"
+                Value="2"
+                ValueChanged="PesoSlider_ValueChanged"
+                />
+
+            <Label
+                x:Name="IMCLabel"
+                Text="IMC: "
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <Label
+                x:Name="ClassificacaoIMCLabel"
+                Text="Classificação IMC: "
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <Button
+                x:Name="CalcularIMC"
+                Text="Calcular o seu IMC"
+                Clicked="CalcularIMCButton_Clicked"
+                />
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
